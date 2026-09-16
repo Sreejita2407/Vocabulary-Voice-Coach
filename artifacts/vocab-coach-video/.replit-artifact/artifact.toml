@@ -1,0 +1,29 @@
+kind = "video"
+videoAspectRatio = "16:9"
+previewPath = "/vocab-coach-video/"
+title = "Vocab Voice Coach — Product Demo"
+description = "A short animated product demo showing how Vocab Voice Coach turns vocabulary practice into a spoken, low-pressure learning loop."
+version = "1.0.0"
+id = "artifacts/vocab-coach-video"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/vocab-coach-video/" ]
+localPort = 20214
+
+[services.development]
+run = "pnpm --filter @workspace/vocab-coach-video run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vocab-coach-video", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/vocab-coach-video/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20214"
+BASE_PATH = "/vocab-coach-video/"
