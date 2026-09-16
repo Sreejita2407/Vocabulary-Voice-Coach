@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Vocab Voice Coach"
+description = "A browser-based voice agent that helps learners practice vocabulary through spoken prompts, microphone answers, instant feedback, and progress tracking."
+version = "1.0.0"
+id = "artifacts/vocab-voice-coach"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22236
+
+[services.development]
+run = "pnpm --filter @workspace/vocab-voice-coach run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vocab-voice-coach", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/vocab-voice-coach/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22236"
+BASE_PATH = "/"
