@@ -294,10 +294,6 @@ function App() {
             >
               <Bell size={17} />
             </button>
-            <div className="profile-chip" data-testid="profile-chip">
-              <div className="profile-avatar">AM</div>
-              <div className="profile-copy"><strong>Alex Morgan</strong><span>steady learner</span></div>
-            </div>
           </div>
         </header>
 
