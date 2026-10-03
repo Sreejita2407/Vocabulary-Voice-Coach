@@ -1,0 +1,4 @@
+{
+  "buildCommand": "pnpm --filter @workspace/vocab-voice-coach run build",
+  "outputDirectory": "artifacts/vocab-voice-coach/dist/public"
+}

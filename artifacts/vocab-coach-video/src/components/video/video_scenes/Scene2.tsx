@@ -23,7 +23,7 @@ export function Scene2() {
         <div className="prompt-word" style={{ fontSize: '5.4vw', marginTop: '3vh' }}>listen</div>
         <motion.div className="waveform" style={{ marginTop: '5vh', height: '12vh' }}>
           {[21, 32, 48, 72, 58, 88, 46, 68, 95, 55, 75, 38, 61, 28, 50, 79, 42, 67, 31, 48, 26, 56, 35, 72, 44, 62].map((height, index) => (
-            <motion.span key={height + index} style={{ height: `${height}%`, width: '.38vw' }} animate={{ scaleY: [1, .38, 1.2, .82, 1] }} transition={{ delay: index * .045, duration: 1.45, repeat: Infinity, ease: 'easeInOut' }} />
+            <motion.span key={`prompt-wave-${index}`} style={{ height: `${height}%`, width: '.38vw' }} animate={{ scaleY: [1, .38, 1.2, .82, 1] }} transition={{ delay: index * .045, duration: 1.45, repeat: Infinity, ease: 'easeInOut' }} />
           ))}
         </motion.div>
         <div className="audio-row" style={{ marginTop: '3vh' }}><span className="audio-label">voice prompt playing</span><motion.span className="status-dot" animate={{ scale: [1, 1.5, 1] }} transition={{ duration: 1, repeat: Infinity }} /></div>

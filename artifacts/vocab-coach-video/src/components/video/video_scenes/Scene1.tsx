@@ -36,7 +36,7 @@ export function Scene1() {
         <div className="audio-row">
           <motion.div className="waveform" aria-hidden="true">
             {[24, 39, 58, 35, 70, 47, 28, 63, 46, 31, 54, 22, 42, 29, 49, 37, 61, 28].map((height, index) => (
-              <motion.span key={height + index} style={{ height: `${height}%` }} animate={{ scaleY: [1, .55, 1.18, 1] }} transition={{ delay: index * .035, duration: 1.9, repeat: Infinity, ease: 'easeInOut' }} />
+              <motion.span key={`opening-wave-${index}`} style={{ height: `${height}%` }} animate={{ scaleY: [1, .55, 1.18, 1] }} transition={{ delay: index * .035, duration: 1.9, repeat: Infinity, ease: 'easeInOut' }} />
             ))}
           </motion.div>
           <span className="audio-label">listen first</span>

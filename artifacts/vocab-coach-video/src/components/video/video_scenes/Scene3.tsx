@@ -17,7 +17,7 @@ export function Scene3() {
             <div className="option-label">voice</div>
             <div className="option-copy">Answer with your microphone.</div>
             <motion.div className="waveform" style={{ marginTop: '2.5vh', height: '3.5vh' }}>
-              {[50, 88, 34, 68, 45, 75, 30, 58, 83, 42, 62].map((height, index) => <motion.span key={height + index} style={{ height: `${height}%`, background: 'var(--color-accent)' }} animate={{ scaleY: [1, .5, 1] }} transition={{ delay: index * .06, duration: 1, repeat: Infinity }} />)}
+              {[50, 88, 34, 68, 45, 75, 30, 58, 83, 42, 62].map((height, index) => <motion.span key={`answer-wave-${index}`} style={{ height: `${height}%`, background: 'var(--color-accent)' }} animate={{ scaleY: [1, .5, 1] }} transition={{ delay: index * .06, duration: 1, repeat: Infinity }} />)}
             </motion.div>
           </div>
           <div className="answer-option">
